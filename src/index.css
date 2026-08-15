@@ -1,0 +1,68 @@
+:root {
+  --ink: #101a2b;
+  --ink-2: #17233a;
+  --ink-3: #1e2c46;
+  --rule: #2c3d5a;
+  --rule-soft: #223252;
+  --paper: #eee9dd;
+  --paper-dim: #c9c3b3;
+  --text: #edf1f7;
+  --text-dim: #93a2b8;
+  --accent: #e2a33d;
+  --accent-dim: #7a6230;
+  --pos: #55b98a;
+  --neg: #e2604f;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+a { color: inherit; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Utility: tabular ledger numerals */
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.pos { color: var(--pos); }
+.neg { color: var(--neg); }
+
+/* Custom scrollbar to match ink theme */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--ink-2); }
+::-webkit-scrollbar-thumb { background: var(--rule); border-radius: 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
